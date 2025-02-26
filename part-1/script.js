@@ -1,3 +1,7 @@
+const Web3 = require('web3');
+
+const web3 = new Web3('사용하고 싶은 네트워크의 노드 주소'); // >> rpcURL
+
 let player = document.querySelector('#player');
 let title = document.querySelector('#title');
 
@@ -30,14 +34,15 @@ function runPromise() {
   resetTitle();
   playVideo();
 
-  sleep(1000).then(() => {
-    pauseVideo();
-    displayTitle();
-  })
+  sleep(1000)
+    .then(() => {
+      pauseVideo();
+      displayTitle();
+    })
     .then(sleep.bind(null, 500))
     .then(highlightTitle)
     .then(sleep.bind(null, 2000))
-    .then(resetTitle)
+    .then(resetTitle);
 }
 
 async function runAsync() {
@@ -54,7 +59,6 @@ async function runAsync() {
   await sleep(2000);
   resetTitle();
 }
-
 
 function resetTitle() {
   log('제목을 초기화합니다');
