@@ -1,3 +1,8 @@
+const Web3 = require(''Web3') //// 모듈 가져다 쓴느거 익숙해져여. 
+
+const web3 = .////// 
+
+
 let player = document.querySelector('#player');
 let title = document.querySelector('#title');
 
